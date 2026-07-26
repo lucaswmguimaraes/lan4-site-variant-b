@@ -18,6 +18,24 @@
   display: none !important;
 }
 
+/* Hero mais enxuto: o 100vh do original reservava espaço para o pin do
+   carrossel de serviços logo abaixo (efeito de scroll travado). Sem
+   carrossel nesta variante, tela cheia só empurra o comparativo de custo
+   para baixo da dobra sem necessidade — reduz para dar ritmo mais rápido
+   à página e levar o visitante ao 2º bloco (comparação de custo) antes. */
+.hero,
+.hero-top {
+  height: auto;
+  min-height: 78vh;
+}
+
+@media (min-height: 800px) {
+  .hero,
+  .hero-top {
+    min-height: 72vh;
+  }
+}
+
 /* Grid de dores — substitui o carrossel infinito por um grid estático
    de 3-4 cards, reduzindo o número de elementos em movimento na tela. */
 .problems-grid .prob-card {
@@ -38,4 +56,32 @@
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Faixa de credibilidade: discreta, texto puro, sem cards nem sombra,
+   para não competir visualmente com o comparativo de custo logo acima. */
+.credibility-strip {
+  padding: 1.6rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.credibility-strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 2.4rem;
+  text-align: center;
+}
+
+.credibility-item {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.credibility-item strong {
+  color: #FFD900;
+  font-weight: 700;
 }
