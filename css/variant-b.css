@@ -42,6 +42,36 @@
   min-width: 0;
 }
 
+/* Paleta da seção de dores: o site original usa vermelho vibrante
+   (#f02020) aqui, mas isso destoa do azul-marinho/amarelo do resto
+   da página, especialmente ao lado dos blocos mais refinados desta
+   variante (credibilidade, fundador). Substituído por âmbar escuro,
+   mantendo o peso emocional de "alerta" sem quebrar a identidade. */
+.problems-section-bg {
+  background: #1a1204;
+}
+
+.prob-accent {
+  color: #E8A93B;
+}
+
+.prob-card {
+  background: linear-gradient(145deg, #1c1608 0%, #120e05 100%);
+  border-color: rgba(232, 169, 59, .3);
+}
+
+.prob-card::before {
+  background: linear-gradient(90deg, transparent, rgba(232, 169, 59, .6), transparent);
+}
+
+.prob-card::after {
+  background: radial-gradient(circle, rgba(232, 169, 59, .13) 0%, transparent 70%);
+}
+
+.prob-card-icon {
+  color: #E8A93B;
+}
+
 /* Bloco de comparação de custo: título mais respirado quando reaproveitado
    fora do contexto original (que tinha o logo "Engine" como elemento visual
    central; aqui o texto puro assume esse papel). */
