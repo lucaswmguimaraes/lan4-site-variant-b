@@ -58,10 +58,11 @@
   margin-right: auto;
 }
 
-/* Faixa de credibilidade: discreta, texto puro, sem cards nem sombra,
-   para não competir visualmente com o comparativo de custo logo acima. */
+/* Faixa de credibilidade: ícone + texto, cards discretos sem sombra
+   pesada, para não competir visualmente com o comparativo de custo
+   logo acima mas ainda ter presença visual própria. */
 .credibility-strip {
-  padding: 1.6rem 0;
+  padding: 2rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -70,11 +71,34 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.6rem 2.4rem;
-  text-align: center;
+  gap: 1.4rem 2.6rem;
 }
 
 .credibility-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  max-width: 320px;
+}
+
+.credibility-icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: rgba(255, 217, 0, 0.12);
+  color: #FFD900;
+}
+
+.credibility-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.credibility-item p {
   font-size: 0.85rem;
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.7);
@@ -84,4 +108,66 @@
 .credibility-item strong {
   color: #FFD900;
   font-weight: 700;
+}
+
+/* Fundador — foto + frase de impacto. Layout simples de 2 colunas
+   (foto à esquerda, citação à direita), empilha no mobile. */
+.founder-section {
+  padding: 3.2rem 0;
+}
+
+.founder-inner {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  max-width: 900px;
+}
+
+.founder-media {
+  flex: none;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 217, 0, 0.35);
+}
+
+.founder-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.founder-quote {
+  font-family: 'Host Grotesk', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #fff;
+  margin: 0 0 0.8rem;
+}
+
+.founder-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFD900;
+  margin: 0;
+}
+
+.founder-role {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0.15rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .founder-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.2rem;
+  }
+  .founder-quote {
+    font-size: 1.15rem;
+  }
 }
