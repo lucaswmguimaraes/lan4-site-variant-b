@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-domain="marketing" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+
+  <!-- Modo prévia: fora de lan4.com.br (ex.: GitHub Pages) o GTM não carrega
+       e o main.js não envia conversões ao RD — nenhum teste polui GA4/Ads/RD. -->
+  <script>window.LAN4_PREVIEW = !/(^|\.)lan4\.com\.br$/.test(location.hostname);
+  if (window.LAN4_PREVIEW) { var m = document.createElement('meta'); m.name = 'robots'; m.content = 'noindex,nofollow'; document.head.appendChild(m); }</script>
+
+  <!-- Google Tag Manager -->
+  <script>if (!window.LAN4_PREVIEW) (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KK94LW4M');</script>
+  <!-- End Google Tag Manager -->
+
+  <title>Mídia Paga (Variante B) — Quanto entra de pipeline pra cada real investido | LAN4</title>
+  <meta name="description" content="Teste A/B: ângulo de comparação de custo/resultado para a LP de Mídia Paga. Não indexar, variante de teste.">
+  <meta name="robots" content="noindex,nofollow">
+  <!-- Serviço desta página: alimenta cf_servico_de_interesse no RD mesmo sem UTM -->
+  <script>window.LAN4_SERVICO_PAGINA = 'Mídia Paga';</script>
+
+  <link rel="icon" type="image/svg+xml" href="../../img/4.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../css/tokens.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/variant-b.css" />
+
+  <!-- Schema.org — Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://lan4.com.br/#organization",
+    "name": "LAN4",
+    "legalName": "Comercial Lan4 Tecnologia e Representações Ltda",
+    "url": "https://lan4.com.br/",
+    "logo": "https://lan4.com.br/img/4.svg",
+    "description": "Hub de crescimento de receita para empresas B2B: time de vendas dedicado (SDRs e closers), geração de demanda, dados e camada estratégica num único ecossistema.",
+    "taxID": "15.498.834/0001-46",
+    "email": "infos@lan4.com.br",
+    "foundingDate": "2012-03-21",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Américo Bruno, 331",
+      "addressLocality": "Jundiaí",
+      "addressRegion": "SP",
+      "postalCode": "13218-080",
+      "addressCountry": "BR"
+    },
+    "areaServed": "BR",
+    "sameAs": [
+      "https://www.instagram.com/lan4br/",
+      "https://www.linkedin.com/company/lan4sales/"
+    ],
+    "knowsAbout": [
+      "terceirização de vendas B2B",
+      "geração de demanda B2B",
+      "SDR terceirizado",
+      "receita previsível",
+      "agentes de IA para vendas"
+    ]
+  }
+  </script>
+
+  <!-- Schema.org — FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quanto custa comparado a uma agência tradicional?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Uma agência cobra pela gestão da mídia e entrega cliques. A Lan4 entrega mídia paga já conectada ao comercial: o lead vira reunião, a reunião vira contrato, e você acompanha o pipeline gerado, não só o CPL."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Em quanto tempo começo a ver os primeiros resultados?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O onboarding leva em média duas semanas. A partir da terceira semana já há campanhas ativas rodando com otimização. Resultados concretos de pipeline aparecem entre 30 e 60 dias."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A Lan4 funciona para qualquer segmento ou tamanho de empresa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Focamos em empresas B2B que já validaram o produto mas precisam escalar a aquisição. Atendemos SaaS, consultorias, serviços empresariais, indústria e varejo B2B."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .lf-consent{display:flex;gap:.55rem;align-items:flex-start;margin:.9rem 0 .2rem;font-size:.8rem;line-height:1.45;opacity:.85;cursor:pointer}
+    .lf-consent input{margin-top:.2rem;flex:none;accent-color:#FFD900}
+    .lf-consent a{color:#FFD900;text-decoration:underline}
+    .footer-bottom p{margin:.15rem 0}
+    .footer-legal{font-size:.8rem;opacity:.75}
+    .footer-legal a{color:inherit;text-decoration:underline}
+    .lf-wrap{scroll-margin-top:90px}
+    .lf-step{display:none;border:0;padding:0;margin:0;min-width:0}
+    .lf-step.is-active{display:block;animation:lfStepIn .28s ease}
+    @keyframes lfStepIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+    @media (prefers-reduced-motion:reduce){.lf-step.is-active{animation:none}}
+    .lf-progress{margin-bottom:1.5rem}
+    .lf-progress-meta{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.6rem;font-family:'Host Grotesk',sans-serif}
+    .lf-progress-count{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);white-space:nowrap}
+    .lf-progress-count b{color:#FFD900}
+    .lf-progress-title{font-size:.98rem;font-weight:700;color:#fff;text-align:right}
+    .lf-progress-track{display:flex;gap:6px}
+    .lf-progress-seg{flex:1;height:4px;border-radius:99px;background:rgba(255,255,255,.16);transition:background .3s ease}
+    .lf-progress-seg.is-active{background:rgba(255,217,0,.55)}
+    .lf-progress-seg.is-done{background:#FFD900}
+    .lf-label{display:block;font-family:'Host Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-bottom:9px}
+    .lf-options{display:grid;gap:8px}
+    .lf-options--2col{grid-template-columns:1fr 1fr}
+    @media (max-width:380px){.lf-options--2col{grid-template-columns:1fr}}
+    .lf-opt{position:relative;display:block;cursor:pointer;margin-bottom:0}
+    .lf-opt input{position:absolute;opacity:0;pointer-events:none}
+    .lf-group label.lf-opt{text-transform:none;letter-spacing:normal;font-family:'CreatoDisplay',sans-serif;font-size:14.5px;font-weight:400;color:inherit;margin-bottom:0}
+    .lf-opt span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:48px;padding:10px 12px;border-radius:10px;background:#E9EBEF;color:#1a1f2c;font-size:14.5px;line-height:1.25;border:1.5px solid transparent;transition:border-color .15s ease,background .15s ease,box-shadow .15s ease}
+    .lf-opt input:checked+span{background:#FFD900;border-color:#FFD900;color:#0a1628;box-shadow:0 4px 14px rgba(255,217,0,.35);font-weight:700}
+    .lf-opt input:checked+span::before{content:'✓';font-weight:800;margin-right:8px}
+    .lf-opt input:focus-visible+span{border-color:#154CC4}
+    .lf-nav{display:flex;gap:10px;align-items:stretch;margin-top:.4rem}
+    .lf-nav .lf-btn{flex:1;margin-top:0}
+    .lf-back{flex:none;background:none;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);border-radius:12px;padding:14px 18px;font-family:'Host Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:border-color .15s ease}
+    .lf-back:hover{border-color:rgba(255,255,255,.5)}
+    .lf-step-msg{display:none;margin:0 0 .8rem;padding:11px 14px;border-radius:10px;font-size:13.5px;line-height:1.5;background:rgba(240,32,32,.1);border:1px solid rgba(240,32,32,.28);color:#f07070}
+    .lf-step-hint{margin:0 0 1.1rem;font-size:.92rem;line-height:1.5;color:rgba(255,255,255,.75)}
+    .lf-field-hint{display:block;margin-top:6px;font-size:.74rem;line-height:1.4;color:rgba(255,255,255,.55)}
+    form.is-sent .lf-step,form.is-sent .lf-progress{display:none}
+    .lan4-preview-badge{position:fixed;bottom:78px;left:12px;z-index:999;background:#7c3aed;color:#fff;border-radius:999px;font:600 10.5px/1.4 'Host Grotesk',sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:7px 14px;box-shadow:0 6px 18px rgba(0,0,0,.4);pointer-events:none}
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;align-items:center;justify-content:space-between;gap:.8rem;padding:.65rem 1rem;padding-bottom:calc(.65rem + env(safe-area-inset-bottom));background:rgba(7,14,29,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid rgba(255,217,0,.35);transform:translateY(110%);transition:transform .3s ease}
+    .sticky-cta.is-visible{transform:translateY(0)}
+    .sticky-cta-text{font-size:.78rem;line-height:1.3;color:#fff;opacity:.92}
+    .sticky-cta-text strong{color:#FFD900;display:block;font-size:.88rem}
+    .sticky-cta-btn{flex:none;background:#FFD900;color:#0A1428;font-weight:700;font-size:.88rem;padding:.7rem 1.15rem;border-radius:999px;text-decoration:none;white-space:nowrap}
+    @media (max-width:768px){.sticky-cta{display:flex}}
+  </style>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK94LW4M"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- ════════════════════════════════════════════════
+       NAVBAR / HEADER
+  ════════════════════════════════════════════════ -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+
+        <a class="logo-link" href="#" aria-label="LAN4">
+          <span class="logo-svg-wrap">
+            <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 824.39 249.66" aria-hidden="true" focusable="false">
+              <g class="logo-lan">
+                <path d="M65.49,0v112.53h87.52v35.51H0V0h65.49Z"/>
+                <path d="M153.01,148.03L223.31,0h88.61l69.21,148.03h-69.91l-10.09-28h-69.29l-10.32,28h-68.51ZM288.95,86.28l-22.11-61.23-22.5,61.23h44.62Z"/>
+                <path d="M590.55,148.03h-86.2l-60.99-103.31v103.31h-62.23V0h90.86l56.33,94.88V0h62.23v148.03Z"/>
+              </g>
+              <g class="logo-icon">
+                <path d="M528.32,147.7c26.95-14.09,57.22-34.45,90.82-61.08,33.59-26.63,65.8-55.51,96.64-86.63h43.24v148.87s65.37,0,65.37,0v52.15h-65.37s0,48.64,0,48.64h-41.03v-48.64s-189.67,0-189.67,0v-53.32ZM657.55,108.69c-21.52,17.34-39.59,30.73-54.21,40.18h114.65s0-93.83,0-93.83c-18.77,18.42-38.92,36.3-60.44,53.65Z"/>
+              </g>
+            </svg>
+          </span>
+        </a>
+
+        <nav class="nav-center" aria-label="primary">
+          <ul class="nav-links">
+            <li><a class="nav-link" href="#comparativo">Investimento</a></li>
+            <li><a class="nav-link" href="#o-que-resolvemos">Desafios</a></li>
+            <li><a class="nav-link" href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-ctas">
+          <a class="btn btn-sm btn-solid btn-contato" href="#contato" data-cta="nav-contato" data-cta-location="navbar">Contato</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span class="menu-toggle-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-panel" id="mobilePanel">
+    <nav class="mobile-panel-nav">
+      <ul class="mobile-panel-links">
+        <li><a class="mobile-panel-link" href="#comparativo">Investimento</a></li>
+        <li><a class="mobile-panel-link" href="#o-que-resolvemos">Desafios</a></li>
+        <li><a class="mobile-panel-link" href="#faq">FAQ</a></li>
+      </ul>
+      <div class="mobile-panel-cta">
+        <a class="btn btn-lg btn-solid" href="#contato" data-cta="menu-mobile-contato" data-cta-location="menu-mobile">Contato</a>
+      </div>
+    </nav>
+  </div>
+
+<!-- ════════════════════════════════════════════════
+     MAIN / HERO — ângulo de comparação de custo/resultado
+════════════════════════════════════════════════ -->
+  <main>
+    <div class="hero-pin">
+      <div class="hero">
+        <section class="hero-top">
+          <video class="hero-video-bg is-active" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+            <source src="../../video/Site%20video%20fundo%20lan4.webm" type="video/webm">
+          </video>
+          <div class="hero-video-overlay" aria-hidden="true"></div>
+          <div class="container">
+
+            <div class="hero-content">
+
+              <div class="hero-badge">
+                <div class="hero-badge-inner">
+                  <span class="badge-icon" aria-hidden="true">
+                    <svg width="7" height="9" viewBox="0 0 7 9" fill="currentColor"><path d="M0 0L7 4.5L0 9Z"/></svg>
+                  </span>
+                  <p class="badge-text">Mídia Paga · Hub LAN4</p>
+                </div>
+              </div>
+
+              <h1 class="hero-h1 f-marketing-display-xl">
+                O que você paga numa agência vs. <span class="destaque-h1">o que entra de pipeline real</span>
+              </h1>
+
+              <p class="hero-h2">Google e Meta Ads conectados ao seu comercial: você compara o investimento com o resultado que realmente vira contrato, não só com o CPL do relatório.</p>
+
+              <div class="hero-ctas">
+                <a class="btn btn-lg btn-solid" href="#contato" data-cta="hero-diagnostico-midia" data-cta-location="hero" data-pointer-glow>
+                  <span class="label" style="text-transform:uppercase">Quero ver essa comparação</span>
+                  <div class="pointer-glow" aria-hidden="true"></div>
+                </a>
+              </div>
+            </div>
+
+          </div><!-- /.container -->
+
+          <a class="hero-scroll-indicator" href="#comparativo" aria-label="Rolar para baixo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+        </section>
+      </div><!-- /.hero -->
+    </div><!-- /.hero-pin -->
+
+    <!-- ════════════════════════════════════════════════
+         COMPARATIVO DE CUSTO/RESULTADO — âncora do ângulo desta variante
+    ════════════════════════════════════════════════ -->
+    <section class="compare-section" id="comparativo">
+      <div class="container">
+
+        <h2 class="compare-title reveal">Agência tradicional ou <strong>Lan4</strong>? Compare o que cada real gera.</h2>
+        <p class="problems-sub reveal" style="max-width:640px;margin:0 auto 2.4rem;text-align:center">A maioria das agências cobra pela gestão e entrega cliques. A Lan4 entrega mídia conectada ao comercial, o que muda o que você mede:</p>
+
+        <div class="compare-single reveal" style="--reveal-delay:.12s">
+          <div class="compare-card compare-card--engine">
+            <div class="compare-card-body">
+              <div class="compare-list-cols">
+                <ul class="compare-list compare-list--checks" aria-label="Agência tradicional">
+                  <li>Cobra fee fixo pela gestão da campanha</li>
+                  <li>Reporta clique, impressão e CPL, não pipeline</li>
+                  <li>Entrega o lead e some, quem responde pela venda é você</li>
+                  <li>Sem integração com CRM ou processo comercial</li>
+                  <li>Otimiza pelo número mais fácil de melhorar</li>
+                </ul>
+                <ul class="compare-list compare-list--checks" aria-label="Mídia Paga Lan4">
+                  <li>Gestão completa: Google e Meta Ads, criativo incluso</li>
+                  <li>Reporta o que vira reunião e o que vira contrato</li>
+                  <li>Lead entra, SDR trabalha, funil integrado</li>
+                  <li>Tracking completo (GTM, CRM, Enhanced Conversions)</li>
+                  <li>Otimiza pelo lead qualificado, não pelo clique barato</li>
+                </ul>
+              </div>
+            </div>
+            <div class="compare-card-footer compare-card-footer--engine">
+              <p class="compare-footer-label">Custo de aquisição real</p>
+              <p class="compare-footer-value compare-footer-value--green">Até 70% menor</p>
+              <p class="compare-footer-sub">Comparado ao custo de montar e manter uma operação própria de mídia e vendas.</p>
+            </div>
+          </div>
+        </div><!-- /.compare-single -->
+
+        <div class="compare-cta reveal" style="--reveal-delay:.22s">
+          <a class="btn btn-lg btn-solid btn-contato" href="#contato" data-cta="quero-entender-metodo" data-cta-location="comparativo-midia" data-pointer-glow>
+            <span class="label">Quero ver essa comparação</span>
+            <div class="pointer-glow" aria-hidden="true"></div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+         O QUE RESOLVEMOS — dores mais fortes (sem carrossel infinito)
+    ════════════════════════════════════════════════ -->
+    <section class="problems-section" id="o-que-resolvemos">
+
+      <div class="problems-section-bg" aria-hidden="true"></div>
+
+      <div class="container">
+        <header class="problems-header reveal">
+          <h2 class="problems-title">
+            Colocar anúncio no ar <span class="prob-accent">é fácil.</span><br>
+            Saber o que ele realmente <span class="prob-accent prob-heavy">te devolveu</span> é outro jogo.
+          </h2>
+          <p class="problems-sub">
+            <strong>CPL bonito no painel não paga conta se o pipeline continua vazio.</strong>
+            O que importa é quanto do investimento vira reunião qualificada e, no fim, contrato.
+          </p>
+        </header>
+
+        <div class="problems-grid reveal" style="--reveal-delay:.18s;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2.4rem">
+
+          <article class="prob-card">
+            <span class="prob-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+              </svg>
+            </span>
+            <h3 class="prob-card-title">Lead barato que não fecha</h3>
+            <p class="prob-card-text">CPL bonito no painel, pipeline vazio no CRM. Otimizar pelo número errado custa caro.</p>
+          </article>
+
+          <article class="prob-card">
+            <span class="prob-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>
+            </span>
+            <h3 class="prob-card-title">Relatório caixa-preta</h3>
+            <p class="prob-card-text">Números soltos de clique e impressão que não dizem quanto virou receita.</p>
+          </article>
+
+          <article class="prob-card">
+            <span class="prob-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/><line x1="2" y1="2" x2="22" y2="22"/>
+              </svg>
+            </span>
+            <h3 class="prob-card-title">Agência entrega clique e some</h3>
+            <p class="prob-card-text">Gera o lead e vai embora. Quem responde pela venda é você.</p>
+          </article>
+
+          <article class="prob-card">
+            <span class="prob-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </span>
+            <h3 class="prob-card-title">Sem tempo para operar</h3>
+            <p class="prob-card-text">Plataforma muda toda semana. Acompanhar leilão, criativo e verba virou segundo emprego.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+         CONTATO — Formulário RD Station (MANTIDO idêntico: mesmos campos, data-rd-id)
+    ════════════════════════════════════════════════ -->
+    <section class="contato-section" id="contato">
+      <div class="container">
+
+        <div class="contato-header reveal">
+          <h2 class="contato-title">Pronto para <span class="destaque-h1"><strong>comparar o seu custo real?</strong></span></h2>
+          <p class="contato-sub">Uma conversa de 30 minutos: sua operação de mídia, seu funil e o que cada real investido está trazendo de volta.</p>
+        </div>
+
+        <div class="lf-wrap reveal" style="--reveal-delay:.12s">
+          <form id="lf" novalidate data-rd-id="lan4-lp-midia-paga">
+
+            <div class="lf-progress">
+              <div class="lf-progress-meta">
+                <span class="lf-progress-count">Etapa <b data-step-current>1</b> de 3</span>
+                <span class="lf-progress-title" data-step-title>Sobre sua empresa</span>
+              </div>
+              <div class="lf-progress-track" aria-hidden="true">
+                <span class="lf-progress-seg is-active"></span><span class="lf-progress-seg"></span><span class="lf-progress-seg"></span>
+              </div>
+            </div>
+
+            <fieldset class="lf-step is-active" data-step-name="empresa" data-step-title="Sobre sua empresa"
+                      data-req="faturamento:Faturamento médio mensal,ticket:Ticket médio aproximado,ja_investe:Você já investe em anúncios">
+              <div class="lf-group" role="radiogroup" aria-label="Faturamento médio mensal">
+                <span class="lf-label">Faturamento médio mensal*</span>
+                <div class="lf-options lf-options--2col">
+                  <label class="lf-opt"><input type="radio" name="faturamento" value="Até 100k"><span>Até 100k</span></label>
+                  <label class="lf-opt"><input type="radio" name="faturamento" value="100 - 300k"><span>100 - 300k</span></label>
+                  <label class="lf-opt"><input type="radio" name="faturamento" value="300k - 1M"><span>300k - 1M</span></label>
+                  <label class="lf-opt"><input type="radio" name="faturamento" value="Acima de 1M"><span>Acima de 1M</span></label>
+                </div>
+              </div>
+              <div class="lf-group" role="radiogroup" aria-label="Ticket médio aproximado">
+                <span class="lf-label">Ticket médio aproximado*</span>
+                <div class="lf-options lf-options--2col">
+                  <label class="lf-opt"><input type="radio" name="ticket" value="Até R$5 mil"><span>Até R$5 mil</span></label>
+                  <label class="lf-opt"><input type="radio" name="ticket" value="R$5 mil - R$15 mil"><span>R$5 mil - R$15 mil</span></label>
+                  <label class="lf-opt"><input type="radio" name="ticket" value="R$15 mil - R$50 mil"><span>R$15 mil - R$50 mil</span></label>
+                  <label class="lf-opt"><input type="radio" name="ticket" value="Acima de R$50 mil"><span>Acima de R$50 mil</span></label>
+                </div>
+              </div>
+              <div class="lf-group" role="radiogroup" aria-label="Você já investe em anúncios?" data-rd-cf="cf_ja_investe_em_anuncios" data-rd-name="ja_investe">
+                <span class="lf-label">Você já investe em anúncios?*</span>
+                <div class="lf-options">
+                  <label class="lf-opt"><input type="radio" name="ja_investe" value="Nunca investi"><span>Nunca investi</span></label>
+                  <label class="lf-opt"><input type="radio" name="ja_investe" value="Invisto por conta própria"><span>Invisto por conta própria</span></label>
+                  <label class="lf-opt"><input type="radio" name="ja_investe" value="Invisto com agência ou freelancer"><span>Invisto com agência ou freelancer</span></label>
+                  <label class="lf-opt"><input type="radio" name="ja_investe" value="Já investi e parei"><span>Já investi e parei</span></label>
+                </div>
+              </div>
+              <div class="lf-step-msg" role="alert"></div>
+              <div class="lf-nav">
+                <button type="button" class="lf-btn lf-next">Continuar</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="lf-step" data-step-name="investimento" data-step-title="Seu investimento"
+                      data-req="investimento_midia:Investimento mensal em mídia,cargo:Cargo">
+              <div class="lf-group" role="radiogroup" aria-label="Quanto investe por mês em mídia?" data-rd-cf="cf_investimento_mensal_em_midia" data-rd-name="investimento_midia">
+                <span class="lf-label">Quanto investe por mês em mídia?*</span>
+                <div class="lf-options">
+                  <label class="lf-opt"><input type="radio" name="investimento_midia" value="Até R$3 mil"><span>Até R$3 mil</span></label>
+                  <label class="lf-opt"><input type="radio" name="investimento_midia" value="R$3 mil a R$10 mil"><span>R$3 mil a R$10 mil</span></label>
+                  <label class="lf-opt"><input type="radio" name="investimento_midia" value="R$10 mil a R$30 mil"><span>R$10 mil a R$30 mil</span></label>
+                  <label class="lf-opt"><input type="radio" name="investimento_midia" value="Acima de R$30 mil"><span>Acima de R$30 mil</span></label>
+                </div>
+              </div>
+              <div class="lf-group" role="radiogroup" aria-label="Cargo">
+                <span class="lf-label">Qual o seu cargo?*</span>
+                <div class="lf-options lf-options--2col">
+                  <label class="lf-opt"><input type="radio" name="cargo" value="Sócio"><span>Sócio</span></label>
+                  <label class="lf-opt"><input type="radio" name="cargo" value="CEO / Fundador"><span>CEO / Fundador</span></label>
+                  <label class="lf-opt"><input type="radio" name="cargo" value="Diretor"><span>Diretor</span></label>
+                  <label class="lf-opt"><input type="radio" name="cargo" value="Gerente Comercial"><span>Gerente Comercial</span></label>
+                  <label class="lf-opt"><input type="radio" name="cargo" value="Outro"><span>Outro</span></label>
+                </div>
+              </div>
+              <div class="lf-step-msg" role="alert"></div>
+              <div class="lf-nav">
+                <button type="button" class="lf-back">Voltar</button>
+                <button type="button" class="lf-btn lf-next">Continuar</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="lf-step" data-step-name="contato" data-step-title="Seus dados de contato"
+                      data-req="nome:Nome,email:Email,telefone:Telefone,empresa:Empresa,lgpd_consent:Autorização de contato (LGPD)">
+              <p class="lf-step-hint">Última etapa: diga pra quem enviamos a comparação.</p>
+              <div class="lf-row">
+                <div class="lf-group">
+                  <label for="lf-nome">Nome*</label>
+                  <input id="lf-nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome completo">
+                </div>
+                <div class="lf-group">
+                  <label for="lf-email">Email*</label>
+                  <input id="lf-email" name="email" type="email" autocomplete="email" placeholder="seu@email.com">
+                </div>
+              </div>
+              <div class="lf-row">
+                <div class="lf-group">
+                  <label for="lf-tel">Telefone*</label>
+                  <input id="lf-tel" name="telefone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="11998765432">
+                  <span class="lf-field-hint">Usamos seu WhatsApp só para retornar este contato.</span>
+                </div>
+                <div class="lf-group">
+                  <label for="lf-empresa">Empresa*</label>
+                  <input id="lf-empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nome da empresa">
+                </div>
+              </div>
+              <label class="lf-consent">
+                <input type="checkbox" name="lgpd_consent">
+                <span>Autorizo a LAN4 a usar meus dados para retornar este contato, conforme a <a href="/politica-de-privacidade/" target="_blank" rel="noopener">política de privacidade</a>.</span>
+              </label>
+              <div class="lf-step-msg" role="alert"></div>
+              <div class="lf-nav">
+                <button type="button" class="lf-back">Voltar</button>
+                <button type="submit" class="lf-btn">Enviar</button>
+              </div>
+            </fieldset>
+
+            <div class="lf-msg" id="lf-msg"></div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+         FAQ
+    ════════════════════════════════════════════════ -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+
+        <h2 class="faq-title reveal">Perguntas <strong>frequentes</strong></h2>
+
+        <div class="faq-list reveal" style="--reveal-delay:.1s">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Quanto custa comparado a uma agência tradicional?</span>
+              <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="5 8 10 13 15 8"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p class="faq-answer-text">Uma agência cobra pela gestão da mídia e entrega cliques. A Lan4 entrega mídia paga já conectada ao comercial: o lead vira reunião, a reunião vira contrato, e você acompanha o pipeline gerado, não só o CPL.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Em quanto tempo começo a ver os primeiros resultados?</span>
+              <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="5 8 10 13 15 8"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p class="faq-answer-text">O onboarding leva em média duas semanas. A partir da terceira semana já há campanhas ativas rodando com otimização. Resultados concretos de pipeline aparecem entre 30 e 60 dias.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>A Lan4 funciona para qualquer segmento ou tamanho de empresa?</span>
+              <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="5 8 10 13 15 8"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p class="faq-answer-text">Focamos em empresas B2B que já validaram o produto mas precisam escalar a aquisição. Atendemos SaaS, consultorias, serviços empresariais, indústria e varejo B2B.</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.faq-list -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <a href="#" aria-label="LAN4">
+            <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 824.39 249.66" aria-hidden="true" focusable="false">
+              <g fill="#fff">
+                <path d="M65.49,0v112.53h87.52v35.51H0V0h65.49Z"/>
+                <path d="M153.01,148.03L223.31,0h88.61l69.21,148.03h-69.91l-10.09-28h-69.29l-10.32,28h-68.51ZM288.95,86.28l-22.11-61.23-22.5,61.23h44.62Z"/>
+                <path d="M590.55,148.03h-86.2l-60.99-103.31v103.31h-62.23V0h90.86l56.33,94.88V0h62.23v148.03Z"/>
+              </g>
+              <g fill="#FFD900">
+                <path d="M528.32,147.7c26.95-14.09,57.22-34.45,90.82-61.08,33.59-26.63,65.8-55.51,96.64-86.63h43.24v148.87s65.37,0,65.37,0v52.15h-65.37s0,48.64,0,48.64h-41.03v-48.64s-189.67,0-189.67,0v-53.32ZM657.55,108.69c-21.52,17.34-39.59,30.73-54.21,40.18h114.65s0-93.83,0-93.83c-18.77,18.42-38.92,36.3-60.44,53.65Z"/>
+              </g>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#comparativo">Investimento</a></li>
+            <li><a href="#o-que-resolvemos">Desafios</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Redes Sociais</h4>
+          <ul class="footer-links footer-social">
+            <li>
+              <a href="https://www.instagram.com/lan4br/" target="_blank" rel="noopener" aria-label="Instagram da LAN4">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/lan4sales" target="_blank" rel="noopener" aria-label="LinkedIn da LAN4">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /.footer-top -->
+
+      <div class="footer-bottom">
+        <p>© 2026 Lan4. Todos os direitos reservados.</p>
+        <p class="footer-legal">Comercial Lan4 Tecnologia e Representações Ltda · CNPJ 15.498.834/0001-46</p>
+        <p class="footer-legal">Av. Américo Bruno, 331, Ponte de São João, Jundiaí, SP, CEP 13218-080</p>
+        <p class="footer-legal"><a href="mailto:infos@lan4.com.br">infos@lan4.com.br</a> · <a href="/politica-de-privacidade/">Política de privacidade</a></p>
+      </div>
+
+    </div><!-- /.footer-inner -->
+  </footer>
+
+  <!-- Sticky CTA (mobile) — some quando o formulário está visível -->
+  <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+    <span class="sticky-cta-text"><strong>Resolva isso agora</strong>Compare o custo real da sua mídia</span>
+    <a class="sticky-cta-btn" href="#contato" data-cta="stickybar-diagnostico" data-cta-location="sticky-bar-mobile">Falar com a LAN4</a>
+  </div>
+
+  <!-- JS -->
+  <script src="../../js/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+/* ══════════════════════════════════════════════════════════
+   variant-b.css — Overrides da Versão B (teste A/B)
+   Objetivo do teste: 1 promessa central, 1 CTA dominante, menos
+   elementos concorrentes que a home atual (sem carrossel de 11
+   serviços, sem seção de BUs). Este arquivo só contém overrides
+   de layout específicos desta variante — tokens.css e
+   components.css continuam sendo a base compartilhada com o
+   site oficial, sem modificação.
+   ══════════════════════════════════════════════════════════ */
+
+/* Defensivo: caso algum seletor de carrossel/BUs permaneça em cache
+   de alguma página, garante que não renderiza na Versão B. Estas
+   seções não existem no HTML desta variante, mas o guard evita
+   qualquer flash de layout quebrado caso o markup mude no futuro. */
+.servicos-section,
+.servicos-carousel-wrap,
+.bus-section {
+  display: none !important;
+}
+
+/* Grid de dores — substitui o carrossel infinito por um grid estático
+   de 3-4 cards, reduzindo o número de elementos em movimento na tela. */
+.problems-grid .prob-card {
+  min-width: 0;
+}
+
+/* Bloco de comparação de custo: título mais respirado quando reaproveitado
+   fora do contexto original (que tinha o logo "Engine" como elemento visual
+   central; aqui o texto puro assume esse papel). */
+.compare-title strong {
+  color: var(--lan4-yellow, #FFD900);
+}
+
+/* Formulário da home Versão B some do fluxo de "comparativo" pro fluxo de
+   "contato": título um pouco mais compacto para não competir com o hero. */
+.mandala-form-section .contato-title,
+.contato-section .contato-title {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}

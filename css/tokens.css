@@ -1,0 +1,194 @@
+/*
+ * Design tokens — LAN4 brand sobre estrutura liveblocks.io
+ * Paleta: dark blue gradient + amarelo/dourado como accent
+ */
+
+/* ─── Paleta LAN4 ───────────────────────────────────────────────────── */
+:root {
+  --lan4-yellow:          #FFD900;   /* accent principal — botões, destaques */
+  --lan4-yellow-hover:    #FFE433;   /* hover do botão amarelo */
+  --lan4-yellow-dark:     #CCB000;   /* versão escura do amarelo */
+  --lan4-blue-deep:       #050e1f;   /* azul mais escuro */
+  --lan4-blue-dark:       #060F27;   /* fundo base */
+  --lan4-blue-mid:        #0d2149;   /* surface raised */
+  --lan4-blue-glow:       #1a3a6e;   /* glow/divider sutil */
+  --lan4-blue-card:       #154CC4;   /* azul sólido vivo — cards de formulário */
+
+  /* Surfaces */
+  --lb-marketing-color-surface-200:    var(--lan4-blue-deep);
+  --lb-marketing-color-surface-300:    transparent;          /* body usa o gif como bg */
+  --lb-marketing-color-surface-400:    var(--lan4-blue-dark);
+  --lb-marketing-color-surface-500:    rgba(9, 20, 40, .92); /* raised (dropdowns, cards) */
+
+  /* Neutrals — mantém branco como texto */
+  --lb-marketing-color-neutral-100:    rgba(255,255,255,.12); /* dividers opaque */
+  --lb-marketing-color-neutral-200:    rgba(255,255,255,.35);
+  --lb-marketing-color-neutral-300:    rgba(255,255,255,.55); /* subtler text */
+  --lb-marketing-color-neutral-400:    rgba(255,255,255,.75); /* subtle text */
+  --lb-marketing-color-neutral-500:    #fff;                  /* primary text */
+
+  /* Neutral alpha */
+  --lb-marketing-color-neutral-alpha-100: rgba(255,255,255,.06);
+  --lb-marketing-color-neutral-alpha-200: rgba(255,255,255,.10);
+  --lb-marketing-color-neutral-alpha-300: rgba(255,255,255,.14);
+  --lb-marketing-color-neutral-alpha-400: rgba(255,255,255,.18);
+  --lb-marketing-color-neutral-alpha-500: rgba(255,255,255,.22);
+
+  /* Brand — amarelo LAN4 no lugar do purple */
+  --lb-marketing-color-purple-200:     #ffe085;
+  --lb-marketing-color-purple-300:     #ffd050;
+  --lb-marketing-color-purple-400:     var(--lan4-yellow);
+  --lb-marketing-color-purple-500:     var(--lan4-yellow-dark);
+  --lb-marketing-color-purple-alpha-200: rgba(255,217,0,.08);
+  --lb-marketing-color-purple-alpha-300: rgba(255,217,0,.12);
+  --lb-marketing-color-purple-alpha-400: rgba(255,217,0,.16);
+  --lb-marketing-color-purple-alpha-500: rgba(255,217,0,.22);
+
+  /* Pink */
+  --lb-marketing-color-pink-200:       #d097e2;
+  --lb-marketing-color-pink-400:       #c551ec;
+  --lb-marketing-color-pink-alpha-200: #c551ec14;
+  --lb-marketing-color-pink-alpha-400: #c551ec21;
+
+  /* Blue */
+  --lb-marketing-color-blue-200:       #97bee2;
+  --lb-marketing-color-blue-300:       #88bef2;
+  --lb-marketing-color-blue-400:       #6cb0ef;
+  --lb-marketing-color-blue-500:       #51a1ec;
+  --lb-marketing-color-blue-alpha-500: #51a1ec26;
+
+  /* Green */
+  --lb-marketing-color-green-200:      #97e2d0;
+  --lb-marketing-color-green-300:      #88f2d7;
+  --lb-marketing-color-green-400:      #6cefce;
+  --lb-marketing-color-green-500:      #51ecc5;
+
+  /* Yellow */
+  --lb-marketing-color-yellow-200:     #e2d297;
+  --lb-marketing-color-yellow-300:     #f2db88;
+  --lb-marketing-color-yellow-400:     #efd26c;
+  --lb-marketing-color-yellow-500:     #ecca51;
+
+  /* Red */
+  --lb-marketing-color-red-400:        #ef6c6c;
+  --lb-marketing-color-red-500:        #ec5151;
+
+  /* AI Copilots accent */
+  --lb-marketing-color-ai-copilots-400: #e42162;
+  --lb-marketing-color-ai-copilots-500: #ec5184;
+
+  /* Multiplayer */
+  --lb-marketing-color-multiplayer-400: #6c79ef;
+  --lb-marketing-color-multiplayer-500: #5160ec;
+
+  /* Comments */
+  --lb-marketing-color-comments-400:   #efad6c;
+  --lb-marketing-color-comments-500:   #ec9e51;
+
+  /* Overlay */
+  --lb-marketing-color-overlay:        #0006;
+
+  /* ─── Semantic tokens de marketing ──────────────────────────── */
+  --color-marketing:                   var(--lb-marketing-color-neutral-500);
+  --color-marketing-subtle:            var(--lb-marketing-color-neutral-400);
+  --color-marketing-subtler:           var(--lb-marketing-color-neutral-300);
+  --color-marketing-brand:             var(--lb-marketing-color-purple-400);
+
+  --color-marketing-surface-base:      var(--lb-marketing-color-surface-300);
+  --color-marketing-surface-raised:    var(--lb-marketing-color-surface-500);
+  /* Botão sólido principal → amarelo LAN4 */
+  --color-marketing-surface-base-inverse: var(--lan4-yellow);
+  --color-marketing-surface-base-inverse-subtle: var(--lan4-yellow-hover);
+
+  --color-marketing-surface-faded:     var(--lb-marketing-color-neutral-alpha-100);
+  --color-marketing-surface-faded-bold: var(--lb-marketing-color-neutral-alpha-200);
+  --color-marketing-surface-faded-bolder: var(--lb-marketing-color-neutral-alpha-300);
+
+  --color-marketing-divider:           var(--lb-marketing-color-neutral-alpha-200);
+  --color-marketing-divider-subtle:    var(--lb-marketing-color-neutral-alpha-100);
+  --color-marketing-divider-bold:      var(--lb-marketing-color-neutral-alpha-300);
+  --color-marketing-divider-bold-opaque: var(--lb-marketing-color-neutral-100);
+
+  /* Texto sobre o botão amarelo → escuro */
+  --color-marketing-inverse:           #0a1628;
+
+  /* ─── Layout ─────────────────────────────────────────────────── */
+  --spacing:                           0.25rem;   /* 4px base unit */
+  --marketing-header-height:           calc(var(--spacing) * 16);  /* 64px */
+  --spacing-inner-gutter:              calc(var(--spacing) * 4);   /* 16px mobile */
+  --spacing-outer-gutter:              calc(var(--spacing) * 8);   /* 32px mobile */
+  --breakpoint-sm:                     40rem;
+  --breakpoint-md:                     48rem;
+  --breakpoint-lg:                     64rem;
+  --breakpoint-xl:                     80rem;
+
+  /* ─── Typography ─────────────────────────────────────────────── */
+  --font-inter:                        'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-suisse:                       'Inter', ui-sans-serif, system-ui, sans-serif; /* fallback para Suisse (proprietária) */
+  --font-mono:                         'JetBrains Mono', 'Courier New', monospace;
+
+  /* ─── Easing ─────────────────────────────────────────────────── */
+  --ease-out:                          cubic-bezier(0, 0, .2, 1);
+  --ease-out-expo:                     cubic-bezier(.16, 1, .3, 1);
+  --ease-out-bounce:                   cubic-bezier(.34, 1.56, .64, 1);
+  --ease-in-expo:                      cubic-bezier(.95, .05, .795, .035);
+
+  /* ─── Accent hero badge → amarelo LAN4 ──────────────────────── */
+  --unveil-accent-color-dark:          var(--lan4-yellow);
+
+  /* ─── Shadows ────────────────────────────────────────────────── */
+  --shadow-marketing-popover:          0 8px 40px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.1);
+}
+
+/* Gutters responsivos — espelham o comportamento do Tailwind do site */
+@media (min-width: 40rem) {
+  :root {
+    --spacing-inner-gutter: calc(var(--spacing) * 5);
+    --spacing-outer-gutter: calc(var(--spacing) * 7);
+  }
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --spacing-inner-gutter: calc(var(--spacing) * 6);
+    --spacing-outer-gutter: calc(var(--spacing) * 8);
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --spacing-inner-gutter:  calc(var(--spacing) * 7);
+    --spacing-outer-gutter:  calc(var(--spacing) * 10);
+    --marketing-header-height: calc(var(--spacing) * 16);
+  }
+}
+
+/* ─── Tipografia f-marketing (extraída do site) ─────────────────────── */
+.f-marketing-display-xl {
+  letter-spacing: -.015em;
+  font-size: clamp(36px, 9.23vw, 48px);
+  font-weight: 500;
+  line-height: 1;
+}
+@media (min-width: 40rem) {
+  .f-marketing-display-xl { letter-spacing: -.02em; font-size: 54px; }
+}
+@media (min-width: 48rem) {
+  .f-marketing-display-xl { font-size: 60px; }
+}
+@media (min-width: 64rem) {
+  .f-marketing-display-xl { font-size: 64px; line-height: 1.1; }
+}
+
+.f-marketing-body-md {
+  letter-spacing: .004em;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.375;
+}
+@media (min-width: 40rem) {
+  .f-marketing-body-md { font-size: 18px; }
+}
+@media (min-width: 64rem) {
+  .f-marketing-body-md { font-size: 20px; }
+}
