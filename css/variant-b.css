@@ -79,6 +79,41 @@
   color: var(--lan4-yellow, #FFD900);
 }
 
+/* Comparativo: título por grupo + ícone de "x" no grupo negativo.
+   No desktop as duas colunas lado a lado já deixam claro qual é qual
+   pelo alinhamento espacial; no mobile (grid vira 1 coluna) as duas
+   listas empilhavam sem nenhuma diferenciação visual e pareciam um
+   único bloco de 10 itens — o heading + ícone de x resolvem isso em
+   qualquer largura de tela. */
+.compare-list-heading {
+  font-family: 'Host Grotesk', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .55);
+  margin: 0 0 .9rem;
+}
+
+.compare-list-heading--lan4 {
+  color: #FFD900;
+}
+
+.compare-list--cross li::before {
+  content: '✕';
+  color: rgba(255, 255, 255, .4);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+@media (max-width: 47.9375rem) {
+  .compare-list-group--cross {
+    padding-bottom: 1.4rem;
+    margin-bottom: 1.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+  }
+}
+
 /* Formulário da home Versão B some do fluxo de "comparativo" pro fluxo de
    "contato": título um pouco mais compacto para não competir com o hero. */
 .mandala-form-section .contato-title,
